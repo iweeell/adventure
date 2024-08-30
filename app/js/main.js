@@ -3,12 +3,18 @@ $(function () {
   $('.about__slider').slick({
     prevArrow: '<button type="button" class="slick-prev"><svg width="14" height="22" viewBox="0 0 14 22" xmlns="http://www.w3.org/2000/svg"><path d="M11.4187 0.393799L0.8125 11L11.4187 21.6063L13.1875 19.8388L4.3475 11L13.1875 2.1613L11.4187 0.393799Z"/></svg></button>',
     nextArrow: '<button type="button" class="slick-next"><svg width="14" height="22" viewBox="0 0 14 22" xmlns="http://www.w3.org/2000/svg"><path d="M2.58125 21.6062L13.1875 11L2.58125 0.3937L0.8125 2.1612L9.6525 11L0.8125 19.8387L2.58125 21.6062Z"/></svg></button>',
+    autoplay: true,
+    autoplaySpeed: 5000,
+    fade: true,
+    cssEase: 'linear',
   });
 
 
 });
 
 const animItems = document.querySelectorAll('.anim-items');
+const burgerMenu = document.querySelector('.burger-menu');
+const burgerButton = document.querySelector('.burger-btn');
 
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll)
@@ -43,4 +49,9 @@ if (animItems.length > 0) {
   setTimeout(() => {
     animOnScroll();
   }, 300);
-}
+};
+
+burgerButton.addEventListener('click', () => {
+  burgerButton.classList.toggle('burger-btn--active');
+  burgerMenu.classList.toggle('burger-menu--active');
+});

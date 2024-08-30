@@ -213,8 +213,10 @@
 .about {
 
   &__content {
-    height: 985px;
-
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
   }
 
   &__inner {
@@ -405,6 +407,7 @@
 
     &:hover {
       box-shadow: 0 0 10px 5px $orange-accent;
+
       & .footer__btn-icon {
         transform: scale(1.3);
       }
@@ -489,3 +492,6 @@
     font-size: 14px;
   }
 }
+
+
+@import 'media';
