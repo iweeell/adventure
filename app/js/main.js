@@ -9,12 +9,20 @@ $(function () {
     cssEase: 'linear',
   });
 
+  $(".menu, .burger-menu__list").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({ scrollTop: top - 77 }, 1200);
+  });
+
 
 });
 
 const animItems = document.querySelectorAll('.anim-items');
 const burgerMenu = document.querySelector('.burger-menu');
 const burgerButton = document.querySelector('.burger-btn');
+const burgerMenuLink = document.querySelectorAll('.menu__link')
 
 if (animItems.length > 0) {
   window.addEventListener('scroll', animOnScroll)
@@ -54,4 +62,12 @@ if (animItems.length > 0) {
 burgerButton.addEventListener('click', () => {
   burgerButton.classList.toggle('burger-btn--active');
   burgerMenu.classList.toggle('burger-menu--active');
+  
+});
+
+burgerMenuLink.forEach(e => {
+  e.addEventListener('click', () => {
+    burgerButton.classList.remove('burger-btn--active');
+    burgerMenu.classList.remove('burger-menu--active');
+  });
 });

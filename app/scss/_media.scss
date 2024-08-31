@@ -49,6 +49,28 @@
 
 
 @media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .footer {
+    padding: 0;
+  }
+
+  .copy {
+    padding: 10px 0;
+  }
+
+  .header {
+    &__nav {
+      padding-top: 30px;
+    }
+
+    &__content {
+      height: calc(80vh - 74px);
+    }
+  }
+
   .burger-menu {
     display: block;
     position: absolute;
@@ -62,6 +84,7 @@
     text-align: center;
     box-shadow: 0 0 8px 6px #b9a87ff7;
     transition: transform 0.2s;
+    width: 90%;
 
     &--active {
       transform: translate(-50%, 0);
@@ -73,6 +96,7 @@
       padding: 11px;
       display: inline-block;
       font-size: 23px;
+      width: 100%;
     }
 
     & .menu__item:not(:last-child) {
@@ -154,7 +178,7 @@
   }
 
   .about__slider .slick-arrow {
-    display: none;
+    opacity: 0;
   }
 
   .about__inner {
